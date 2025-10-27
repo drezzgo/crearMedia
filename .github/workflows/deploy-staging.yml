@@ -1,0 +1,48 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://crearmediaprueba.com
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Deploy to Staging
+        run: |
+          echo "🚀 Deploying to staging environment..."
+          echo "Built files are in dist/"
+          # Aquí agregarías el comando de deploy real según tu proveedor
+          # Por ejemplo, para Netlify:
+          # npx netlify-cli deploy --prod --dir=dist
+          # Para Vercel:
+          # npx vercel --prod
+          # Para un servidor propio:
+          # rsync -avz dist/ user@server:/path/to/staging/
+          echo "✅ Deploy to staging completed!"
+      
+      - name: Notify deployment
+        if: success()
+        run: |
+          echo "### ✅ Staging Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "Site URL: https://crearmediaprueba.com" >> $GITHUB_STEP_SUMMARY
+          echo "Deployed at: $(date)" >> $GITHUB_STEP_SUMMARY

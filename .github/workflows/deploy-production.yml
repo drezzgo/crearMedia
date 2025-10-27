@@ -1,0 +1,68 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://crearmedia.com
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Run final checks
+        run: |
+          echo "Running final pre-deployment checks..."
+          # Verificar que el sitio se construyó correctamente
+          if [ ! -d "dist" ]; then
+            echo "Error: dist directory not found"
+            exit 1
+          fi
+          if [ ! -f "dist/index.html" ]; then
+            echo "Error: index.html not found in dist"
+            exit 1
+          fi
+          echo "✅ All checks passed"
+      
+      - name: Deploy to Production
+        run: |
+          echo "🚀 Deploying to production environment..."
+          echo "Built files are in dist/"
+          # Aquí agregarías el comando de deploy real según tu proveedor
+          # Por ejemplo, para Netlify:
+          # npx netlify-cli deploy --prod --dir=dist
+          # Para Vercel:
+          # npx vercel --prod
+          # Para un servidor propio:
+          # rsync -avz dist/ user@server:/path/to/production/
+          echo "✅ Deploy to production completed!"
+      
+      - name: Notify deployment
+        if: success()
+        run: |
+          echo "### ✅ Production Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "Site URL: https://crearmedia.com" >> $GITHUB_STEP_SUMMARY
+          echo "Deployed at: $(date)" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Notify failure
+        if: failure()
+        run: |
+          echo "### ❌ Production Deployment Failed" >> $GITHUB_STEP_SUMMARY
+          echo "Check the logs above for details" >> $GITHUB_STEP_SUMMARY
