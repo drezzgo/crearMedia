@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   deploy-production:
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
           # Por ejemplo, para Netlify:
           # npx netlify-cli deploy --prod --dir=dist
           # Para Vercel:
-          # npx vercel --prod
+          # npx vercel --prod --yes
           # Para un servidor propio:
           # rsync -avz dist/ user@server:/path/to/production/
           echo "✅ Deploy to production completed!"
