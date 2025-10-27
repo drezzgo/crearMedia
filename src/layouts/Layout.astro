@@ -1,0 +1,51 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'CrearMedia México', description = 'Agencia digital especializada en desarrollo web, diseño y marketing digital' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="min-h-screen bg-white text-gray-900">
+    <header class="bg-gray-900 text-white py-4">
+      <nav class="container mx-auto px-4">
+        <ul class="flex gap-6">
+          <li><a href="/" class="hover:text-blue-400 transition-colors">Inicio</a></li>
+          <li><a href="/servicios" class="hover:text-blue-400 transition-colors">Servicios</a></li>
+          <li><a href="/acerca" class="hover:text-blue-400 transition-colors">Acerca</a></li>
+          <li><a href="/blogs" class="hover:text-blue-400 transition-colors">Blog</a></li>
+          <li><a href="/eventos" class="hover:text-blue-400 transition-colors">Eventos</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2025 CrearMedia México. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

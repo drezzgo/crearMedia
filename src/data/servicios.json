@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Servicios - CrearMedia México",
+    "description": "Descubre todos los servicios digitales que ofrecemos en CrearMedia México"
+  },
+  "hero": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones digitales completas para tu negocio"
+  },
+  "services": [
+    {
+      "id": "desarrollo-web",
+      "title": "Desarrollo Web",
+      "description": "Creamos sitios web modernos, rápidos y responsivos utilizando las últimas tecnologías como Astro, React y Next.js.",
+      "features": [
+        "Desarrollo a medida",
+        "Optimización SEO",
+        "Diseño responsivo",
+        "Rendimiento optimizado"
+      ]
+    },
+    {
+      "id": "diseno-ux-ui",
+      "title": "Diseño UX/UI",
+      "description": "Diseñamos experiencias de usuario intuitivas y atractivas que convierten visitantes en clientes.",
+      "features": [
+        "Investigación de usuarios",
+        "Prototipado",
+        "Diseño de interfaces",
+        "Testing de usabilidad"
+      ]
+    },
+    {
+      "id": "marketing-digital",
+      "title": "Marketing Digital",
+      "description": "Estrategias de marketing digital personalizadas para aumentar tu presencia online y generar más ventas.",
+      "features": [
+        "SEO y SEM",
+        "Redes sociales",
+        "Email marketing",
+        "Analítica web"
+      ]
+    },
+    {
+      "id": "branding",
+      "title": "Branding",
+      "description": "Construimos marcas memorables que conectan con tu audiencia y destacan en el mercado.",
+      "features": [
+        "Identidad corporativa",
+        "Diseño de logotipos",
+        "Manual de marca",
+        "Estrategia de marca"
+      ]
+    }
+  ]
+}
