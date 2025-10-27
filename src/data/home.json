@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "CrearMedia México - Agencia Digital",
+    "description": "Agencia digital especializada en desarrollo web, diseño y marketing digital en México"
+  },
+  "hero": {
+    "title": "Creamos experiencias digitales excepcionales",
+    "subtitle": "Somos CrearMedia México, tu aliado en transformación digital",
+    "cta": {
+      "text": "Conocer más",
+      "link": "/servicios"
+    }
+  },
+  "about": {
+    "title": "¿Quiénes somos?",
+    "description": "Somos una agencia digital comprometida con la excelencia, enfocados en crear soluciones web innovadoras que impulsan el crecimiento de nuestros clientes."
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "items": [
+      {
+        "title": "Desarrollo Web",
+        "description": "Sitios web modernos y responsivos",
+        "icon": "code"
+      },
+      {
+        "title": "Diseño UI/UX",
+        "description": "Experiencias de usuario excepcionales",
+        "icon": "design"
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Estrategias para hacer crecer tu negocio",
+        "icon": "marketing"
+      }
+    ]
+  }
+}

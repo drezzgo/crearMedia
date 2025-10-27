@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "title": "Acerca de CrearMedia México",
+    "description": "Conoce más sobre CrearMedia México, nuestro equipo y nuestra misión"
+  },
+  "hero": {
+    "title": "Acerca de Nosotros",
+    "subtitle": "Transformamos ideas en realidades digitales"
+  },
+  "about": {
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Impulsar el éxito digital de nuestros clientes a través de soluciones innovadoras, diseño excepcional y un servicio comprometido con la excelencia."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Ser la agencia digital líder en México, reconocida por nuestra creatividad, innovación y resultados medibles que transforman negocios."
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "items": [
+        {
+          "name": "Innovación",
+          "description": "Siempre buscamos las mejores soluciones tecnológicas"
+        },
+        {
+          "name": "Excelencia",
+          "description": "Comprometidos con la calidad en cada proyecto"
+        },
+        {
+          "name": "Compromiso",
+          "description": "Dedicados al éxito de nuestros clientes"
+        },
+        {
+          "name": "Creatividad",
+          "description": "Pensamos fuera de la caja para soluciones únicas"
+        }
+      ]
+    }
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "description": "Un equipo multidisciplinario de profesionales apasionados por el diseño y la tecnología",
+    "members": []
+  }
+}

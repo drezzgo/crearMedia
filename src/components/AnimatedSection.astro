@@ -1,0 +1,32 @@
+---
+// Este es un componente de ejemplo que usa GSAP
+// Puedes extenderlo según las necesidades del proyecto
+---
+
+<div class="gsap-fade-in" id="animated-section">
+  <slot />
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animación de fade-in al hacer scroll
+  const animatedElements = document.querySelectorAll('.gsap-fade-in');
+  
+  animatedElements.forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+  });
+</script>
